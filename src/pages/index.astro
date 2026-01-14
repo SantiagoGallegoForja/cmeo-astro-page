@@ -4,6 +4,44 @@ import HeroSlider from '../components/sections/HeroSlider.astro';
 import SpecialtyCard from '../components/sections/SpecialtyCard.astro';
 import DoctorCard from '../components/sections/DoctorCard.astro';
 import CertificationCard from '../components/sections/CertificationCard.astro';
+
+const stats = [
+  { number: '17+', label: 'Anos de experiencia', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { number: '15,000+', label: 'Pacientes atendidos', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' },
+  { number: '5,000+', label: 'Cirugias exitosas', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+  { number: '98%', label: 'Satisfaccion', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
+];
+
+const whyChooseUs = [
+  { title: 'Diagnostico Preciso', description: 'Evaluaciones detalladas para encontrar la raiz del problema y tratarlo efectivamente.', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { title: 'Atencion Rapida', description: 'Citas en menos de 48 horas. Tu salud no puede esperar.', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+  { title: 'Ubicacion Estrategica', description: 'En el corazon del Oriente Antioqueno, facil acceso desde cualquier municipio.', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
+  { title: 'Equipo Especializado', description: 'Profesionales con anos de experiencia y formacion continua.', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' },
+  { title: 'Multiples Coberturas', description: 'Aceptamos Sura, Coomeva y consulta particular.', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
+  { title: 'Seguimiento Integral', description: 'Acompanamiento completo antes, durante y despues de tu tratamiento.', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
+];
+
+const testimonials = [
+  { name: 'Maria Fernanda G.', text: 'Excelente atencion del Dr. Avila. Mi cirugia de cataratas fue un exito total. Ahora veo perfectamente sin necesidad de gafas.', rating: 5, specialty: 'Oftalmologia' },
+  { name: 'Carlos Alberto M.', text: 'La Dra. Carolina es muy profesional y amable. Me opero de rinoplastia y los resultados superaron mis expectativas.', rating: 5, specialty: 'Otorrinolaringologia' },
+  { name: 'Ana Lucia P.', text: 'Llevé a mi hijo por problemas de audición y el trato fue excelente. Diagnostico rapido y tratamiento efectivo.', rating: 5, specialty: 'Otorrinolaringologia' },
+  { name: 'Roberto Jose S.', text: 'Tenia miedo de operarme los ojos pero el equipo me dio total confianza. Procedimiento rapido y sin dolor.', rating: 5, specialty: 'Oftalmologia' },
+];
+
+const process = [
+  { step: 1, title: 'Agenda tu cita', description: 'Llena el formulario o llamanos. Respondemos en menos de 24 horas.', icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' },
+  { step: 2, title: 'Consulta inicial', description: 'Evaluacion completa con tecnologia de punta para un diagnostico preciso.', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' },
+  { step: 3, title: 'Plan de tratamiento', description: 'Te explicamos las opciones y creamos un plan personalizado para ti.', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+  { step: 4, title: 'Recuperacion', description: 'Seguimiento continuo para garantizar los mejores resultados.', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
+];
+
+const faqs = [
+  { question: '¿Cuanto tiempo tarda en conseguir una cita?', answer: 'Normalmente podemos agendar tu cita en menos de 48 horas. Para urgencias, contamos con atencion prioritaria el mismo dia.' },
+  { question: '¿Aceptan seguros medicos?', answer: 'Si, trabajamos con Poliza Sura y Seguros Coomeva. Tambien ofrecemos consulta particular con facilidades de pago.' },
+  { question: '¿Las cirugias son ambulatorias?', answer: 'La mayoria de nuestros procedimientos son ambulatorios, lo que significa que puedes regresar a casa el mismo dia. Te daremos instrucciones detalladas de cuidado postoperatorio.' },
+  { question: '¿Atienden ninos?', answer: 'Si, tanto en oftalmologia como en otorrinolaringologia atendemos pacientes de todas las edades, incluyendo ninos.' },
+  { question: '¿Donde estan ubicados?', answer: 'Estamos ubicados en Rionegro, Antioquia, en el corazon del Oriente Antioqueno. Tenemos facil acceso desde todos los municipios cercanos.' },
+];
 ---
 
 <PageLayout title="Inicio" description="Centro Medico Especialistas del Oriente - Especialistas en oftalmologia y otorrinolaringologia en Rionegro, Antioquia">
@@ -27,6 +65,85 @@ import CertificationCard from '../components/sections/CertificationCard.astro';
       href="/oftalmologia"
       variant="green"
     />
+  </section>
+
+  <!-- Stats Counter Section -->
+  <section class="relative bg-white py-20 px-4 sm:px-6 overflow-hidden border-y border-gray-100">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        {stats.map((stat, index) => (
+          <div class="text-center group">
+            <div class:list={[
+              'inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4 group-hover:scale-110 transition-all duration-300',
+              index % 4 === 0 ? 'bg-brand-green-100' :
+              index % 4 === 1 ? 'bg-brand-pink-100' :
+              index % 4 === 2 ? 'bg-brand-blue-100' :
+              'bg-brand-green-100'
+            ]}>
+              <svg class:list={[
+                'w-8 h-8',
+                index % 4 === 0 ? 'text-brand-green-600' :
+                index % 4 === 1 ? 'text-brand-pink-600' :
+                index % 4 === 2 ? 'text-brand-blue-600' :
+                'text-brand-green-600'
+              ]} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={stat.icon}/>
+              </svg>
+            </div>
+            <div class:list={[
+              'text-4xl lg:text-5xl font-bold mb-2',
+              index % 4 === 0 ? 'text-brand-green-600' :
+              index % 4 === 1 ? 'text-brand-pink-600' :
+              index % 4 === 2 ? 'text-brand-blue-600' :
+              'text-brand-green-600'
+            ]} data-counter>{stat.number}</div>
+            <div class="text-gray-600 font-medium">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="relative bg-gradient-to-b from-gray-50 to-white py-24 lg:py-32 px-4 sm:px-6 overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-green-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-72 h-72 bg-brand-pink-500/5 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue-50 text-brand-blue-600 text-sm font-semibold mb-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+          </svg>
+          Por que elegirnos
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          Tu salud en las mejores manos
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Combinamos experiencia, tecnologia y atencion humana para brindarte el mejor cuidado.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {whyChooseUs.map((item, index) => (
+          <div class="group bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:shadow-soft-xl hover:-translate-y-2 transition-all duration-500">
+            <div class:list={[
+              'w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300',
+              index % 3 === 0 ? 'bg-gradient-to-br from-brand-green-500 to-brand-green-600 shadow-green-glow' :
+              index % 3 === 1 ? 'bg-gradient-to-br from-brand-pink-500 to-brand-pink-600 shadow-pink-glow' :
+              'bg-gradient-to-br from-brand-blue-500 to-brand-blue-600 shadow-blue-glow'
+            ]}>
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   </section>
 
   <!-- Specialists Section -->
@@ -72,13 +189,111 @@ import CertificationCard from '../components/sections/CertificationCard.astro';
     </div>
   </section>
 
-  <!-- Certifications Section -->
+  <!-- Testimonials Section -->
+  <section class="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-24 lg:py-32 px-4 sm:px-6 overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-brand-green-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-brand-pink-500/10 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white/90 text-sm font-semibold mb-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+          </svg>
+          Testimonios
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+          Lo que dicen nuestros pacientes
+        </h2>
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+          Miles de pacientes satisfechos respaldan nuestra calidad y compromiso.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="testimonials-grid">
+        {testimonials.map((testimonial, index) => (
+          <div class="group bg-white/5 backdrop-blur-sm rounded-3xl p-6 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+            <!-- Stars -->
+            <div class="flex gap-1 mb-4">
+              {[...Array(testimonial.rating)].map(() => (
+                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
+            </div>
+            <!-- Quote -->
+            <p class="text-gray-300 leading-relaxed mb-6 text-sm">"{testimonial.text}"</p>
+            <!-- Author -->
+            <div class="flex items-center gap-3">
+              <div class:list={[
+                'w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm',
+                index % 2 === 0 ? 'bg-gradient-to-br from-brand-green-500 to-brand-green-600' : 'bg-gradient-to-br from-brand-pink-500 to-brand-pink-600'
+              ]}>
+                {testimonial.name.charAt(0)}
+              </div>
+              <div>
+                <p class="text-white font-semibold text-sm">{testimonial.name}</p>
+                <p class="text-gray-500 text-xs">{testimonial.specialty}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
   <section class="relative bg-white py-24 lg:py-32 px-4 sm:px-6 overflow-hidden">
-    <!-- Decorative pattern -->
     <div class="absolute inset-0 opacity-[0.02]">
       <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 40px 40px;"></div>
     </div>
 
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green-100 text-brand-green-700 text-sm font-semibold mb-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+          Proceso simple
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          ¿Como funciona?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          En 4 sencillos pasos estaras en camino a mejorar tu salud.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {process.map((item, index) => (
+          <div class="relative group">
+            <!-- Connector line -->
+            {index < process.length - 1 && (
+              <div class="hidden lg:block absolute top-10 left-[60%] w-full h-0.5 bg-gradient-to-r from-brand-green-300 to-brand-green-100"></div>
+            )}
+            <div class="relative bg-white rounded-3xl p-8 shadow-soft border border-gray-100 hover:shadow-soft-xl hover:-translate-y-2 transition-all duration-500 text-center">
+              <!-- Step number -->
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-br from-brand-green-500 to-brand-green-600 text-white font-bold text-sm flex items-center justify-center shadow-green-glow">
+                {item.step}
+              </div>
+              <!-- Icon -->
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-green-50 to-brand-green-100 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-8 h-8 text-brand-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={item.icon}/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="relative bg-gradient-to-br from-gray-50 to-white py-24 lg:py-32 px-4 sm:px-6 overflow-hidden">
     <div class="max-w-4xl mx-auto text-center relative z-10">
       <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green-100 text-brand-green-700 text-sm font-semibold mb-4">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,4 +323,214 @@ import CertificationCard from '../components/sections/CertificationCard.astro';
     </div>
   </section>
 
+  <!-- FAQ Section -->
+  <section class="relative bg-white py-24 lg:py-32 px-4 sm:px-6 overflow-hidden">
+    <div class="absolute top-0 left-0 w-72 h-72 bg-brand-blue-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-green-500/5 rounded-full blur-3xl"></div>
+
+    <div class="max-w-3xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue-50 text-brand-blue-600 text-sm font-semibold mb-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Preguntas frecuentes
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          ¿Tienes dudas?
+        </h2>
+        <p class="text-lg text-gray-600">
+          Aqui respondemos las preguntas mas comunes de nuestros pacientes.
+        </p>
+      </div>
+
+      <div class="space-y-4" id="faq-accordion">
+        {faqs.map((faq, index) => (
+          <div class="faq-item bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-soft">
+            <button
+              class="faq-trigger w-full flex items-center justify-between p-6 text-left"
+              data-index={index}
+            >
+              <span class="font-semibold text-gray-900 pr-4">{faq.question}</span>
+              <svg class="faq-icon w-5 h-5 text-brand-green-500 flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="faq-content hidden px-6 pb-6">
+              <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Urgency CTA Section -->
+  <section class="relative overflow-hidden">
+    <div class="bg-gradient-to-br from-brand-green-600 via-brand-green-500 to-brand-blue-600 py-20 lg:py-28 px-4 sm:px-6">
+      <!-- Decorative elements -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+      </div>
+      <div class="absolute top-10 left-10 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+
+      <div class="max-w-4xl mx-auto text-center relative z-10">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6 animate-pulse">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Agenda disponible esta semana
+        </div>
+
+        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+          No esperes mas para<br/>cuidar tu salud
+        </h2>
+
+        <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+          Cada dia que pasa sin atencion puede complicar tu condicion. Nuestro equipo esta listo para ayudarte hoy.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="/contacto"
+            class="inline-flex items-center gap-3 px-8 py-4 bg-white text-brand-green-600 font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-lg"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Agendar cita ahora
+          </a>
+          <a
+            href="https://wa.me/573143696560"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 text-lg"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp directo
+          </a>
+        </div>
+
+        <p class="mt-8 text-white/60 text-sm">
+          Respuesta garantizada en menos de 24 horas
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="relative bg-white py-24 lg:py-32 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Info -->
+        <div>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green-100 text-brand-green-700 text-sm font-semibold mb-4">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            Ubicacion
+          </span>
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Visitanos en Rionegro
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Estamos ubicados en el corazon del Oriente Antioqueno, con facil acceso desde todos los municipios cercanos.
+          </p>
+
+          <!-- Contact Cards -->
+          <div class="space-y-4">
+            <a href="tel:+576068865077" class="flex items-center gap-4 p-4 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 hover:shadow-soft transition-all duration-300 group">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-green-500 to-brand-green-600 flex items-center justify-center shadow-green-glow group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Telefono fijo</p>
+                <p class="font-semibold text-gray-900">(606) 886 5077</p>
+              </div>
+            </a>
+
+            <a href="https://wa.me/573143696560" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 hover:shadow-soft transition-all duration-300 group">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-green-500 to-brand-green-600 flex items-center justify-center shadow-green-glow group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">WhatsApp</p>
+                <p class="font-semibold text-gray-900">314 369 6560</p>
+              </div>
+            </a>
+
+            <a href="mailto:contacto@cmeo.com.co" class="flex items-center gap-4 p-4 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 hover:shadow-soft transition-all duration-300 group">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-blue-500 to-brand-blue-600 flex items-center justify-center shadow-blue-glow group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">Correo electronico</p>
+                <p class="font-semibold text-gray-900">contacto@cmeo.com.co</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-br from-brand-green-500/20 to-brand-blue-500/20 rounded-3xl blur-2xl"></div>
+          <div class="relative rounded-3xl overflow-hidden shadow-soft-xl border border-gray-100">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1234567890123!2d-75.37654321234567!3d6.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDcnMjQuNCJOIDc1wrAyMic0MC4yIlc!5e0!3m2!1ses!2sco!4v1234567890123"
+              width="100%"
+              height="400"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </PageLayout>
+
+<script>
+  // FAQ Accordion
+  function initFaqAccordion() {
+    const triggers = document.querySelectorAll('.faq-trigger');
+
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const content = item?.querySelector('.faq-content');
+        const icon = trigger.querySelector('.faq-icon');
+
+        if (!content || !icon) return;
+
+        const isOpen = !content.classList.contains('hidden');
+
+        // Close all
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+        // Toggle current
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  }
+
+  initFaqAccordion();
+  document.addEventListener('astro:page-load', initFaqAccordion);
+</script>
