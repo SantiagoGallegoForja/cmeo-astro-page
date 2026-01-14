@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  backgroundImage: string;
+  height?: string;
+}
+
+const { title, backgroundImage, height = 'h-[45vh]' } = Astro.props;
+---
+
+<section class:list={[
+  'relative w-full overflow-hidden min-h-[300px]',
+  height
+]}>
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src={backgroundImage}
+      alt=""
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+  </div>
+
+  <!-- Gradient Overlay - more subtle -->
+  <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/60 via-black/30 to-black/10"></div>
+
+  <!-- Content -->
+  <div class="relative z-20 h-full flex items-end justify-center pb-12 px-4 sm:px-6">
+    <div class="text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight
+                 drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
+        {title}
+      </h1>
+      <div class="mt-4 w-20 h-1 mx-auto bg-gradient-to-r from-brand-green-400 to-brand-green-500 rounded-full"></div>
+    </div>
+  </div>
+</section>

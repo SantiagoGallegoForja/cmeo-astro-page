@@ -1,0 +1,86 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+}
+
+const { title, description, image, href } = Astro.props;
+---
+
+<article class="group relative bg-white rounded-3xl overflow-hidden
+               shadow-card hover:shadow-soft-xl
+               border border-gray-100 hover:border-brand-green-200/50
+               hover:-translate-y-2
+               transition-all duration-500 ease-out flex flex-col h-full">
+  <!-- Image container with overlay effects -->
+  <div class="relative overflow-hidden aspect-[16/10]">
+    <img
+      src={image}
+      alt={title}
+      class="w-full h-full object-cover transition-all duration-700 ease-out
+             group-hover:scale-110"
+      loading="lazy"
+    />
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent
+                opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+    <!-- Floating badge on hover -->
+    <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100
+                transform translate-y-2 group-hover:translate-y-0
+                transition-all duration-500 delay-100">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full
+                   bg-white/95 backdrop-blur-sm text-xs font-semibold text-brand-green-600
+                   shadow-soft">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-green-500 animate-pulse"></span>
+        Ver servicio
+      </span>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="p-6 lg:p-7 flex flex-col flex-grow relative">
+    <!-- Decorative accent -->
+    <div class="absolute top-0 left-6 w-12 h-1 bg-gradient-to-r from-brand-green-500 to-brand-green-300
+                rounded-full transform -translate-y-0.5"></div>
+
+    <h3 class="text-xl font-bold text-gray-900 mb-3 mt-2
+               group-hover:text-brand-green-600 transition-colors duration-300">
+      {title}
+    </h3>
+
+    <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
+      {description}
+    </p>
+
+    <div class="mt-auto">
+      <a
+        href={href}
+        class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold rounded-xl
+               bg-gradient-to-r from-brand-green-500 to-brand-green-600 text-white
+               shadow-elevation-2 hover:shadow-green-glow-lg
+               hover:-translate-y-0.5 hover:scale-[1.02]
+               active:translate-y-0 active:scale-100
+               transition-all duration-300 group/btn"
+      >
+        Conocer mas
+        <svg
+          class="w-4 h-4 transform translate-x-0 group-hover/btn:translate-x-1.5 transition-transform duration-300"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Corner glow effect on hover -->
+  <div class="absolute -bottom-20 -right-20 w-40 h-40
+              bg-brand-green-500/20 rounded-full blur-3xl
+              opacity-0 group-hover:opacity-100 transition-opacity duration-500
+              pointer-events-none"></div>
+</article>

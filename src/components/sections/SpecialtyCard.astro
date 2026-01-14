@@ -1,0 +1,87 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  href: string;
+  variant: 'pink' | 'green';
+}
+
+const { title, description, icon, href, variant } = Astro.props;
+
+const variantClasses = {
+  pink: {
+    bg: 'bg-gradient-to-br from-brand-pink-500 via-brand-pink-600 to-brand-pink-700',
+    button: 'bg-white text-brand-pink-600 hover:bg-brand-pink-50 shadow-pink-glow hover:shadow-pink-glow-lg',
+    glow: 'bg-brand-pink-400/30',
+    accent: 'bg-white/20',
+  },
+  green: {
+    bg: 'bg-gradient-to-br from-brand-green-500 via-brand-green-600 to-brand-green-700',
+    button: 'bg-white text-brand-green-600 hover:bg-brand-green-50 shadow-green-glow hover:shadow-green-glow-lg',
+    glow: 'bg-brand-green-400/30',
+    accent: 'bg-white/20',
+  },
+};
+
+const classes = variantClasses[variant];
+---
+
+<div class:list={[
+  'relative group px-8 py-20 lg:py-24 flex flex-col items-center justify-center text-center text-white overflow-hidden',
+  classes.bg
+]}>
+  <!-- Decorative elements -->
+  <div class:list={['absolute -top-20 -left-20 w-64 h-64 rounded-full blur-3xl opacity-50', classes.glow]}></div>
+  <div class:list={['absolute -bottom-20 -right-20 w-72 h-72 rounded-full blur-3xl opacity-50', classes.glow]}></div>
+
+  <!-- Pattern overlay -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+  </div>
+
+  <div class="max-w-lg relative z-10">
+    <!-- Icon with glow effect -->
+    <div class="relative inline-block mb-8">
+      <div class:list={['absolute inset-0 rounded-full blur-2xl opacity-40 scale-125', classes.glow]}></div>
+      <img
+        src={icon}
+        alt={title}
+        class="relative w-32 h-32 lg:w-40 lg:h-40 object-contain
+               transition-transform duration-500 group-hover:scale-110
+               drop-shadow-lg"
+        loading="lazy"
+      />
+    </div>
+
+    <h3 class="text-3xl lg:text-4xl font-bold mb-5 tracking-tight">
+      {title}
+    </h3>
+
+    <p class="text-lg lg:text-xl mb-10 leading-relaxed text-white/90 max-w-md mx-auto">
+      {description}
+    </p>
+
+    <a
+      href={href}
+      class:list={[
+        'inline-flex items-center gap-3 font-bold px-10 py-4 rounded-full',
+        'transition-all duration-300',
+        'hover:-translate-y-1 hover:scale-105',
+        'active:translate-y-0 active:scale-100',
+        'group/btn',
+        classes.button
+      ]}
+    >
+      <span>Conocer mas</span>
+      <svg
+        class="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+      </svg>
+    </a>
+  </div>
+</div>

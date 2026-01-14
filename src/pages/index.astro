@@ -1,0 +1,111 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import HeroSlider from '../components/sections/HeroSlider.astro';
+import SpecialtyCard from '../components/sections/SpecialtyCard.astro';
+import DoctorCard from '../components/sections/DoctorCard.astro';
+import CertificationCard from '../components/sections/CertificationCard.astro';
+---
+
+<PageLayout title="Inicio" description="Centro Medico Especialistas del Oriente - Especialistas en oftalmologia y otorrinolaringologia en Rionegro, Antioquia">
+
+  <!-- Hero Slider with Appointment Form -->
+  <HeroSlider />
+
+  <!-- Specialties Section -->
+  <section class="grid grid-cols-1 md:grid-cols-2">
+    <SpecialtyCard
+      title="Otorrinolaringologia"
+      description="Con nuestro servicio de otorrinolaringologia podras encontrar el abordaje de las patologias de oidos, nariz, garganta y laringe, intervenciones quirurgicas de funcionalidad, tratamientos cosmeticos y manejo de urgencias de la especialidad."
+      icon="https://cmeo.com.co/wp-content/uploads/2025/09/logoto.png"
+      href="/otorrino"
+      variant="pink"
+    />
+    <SpecialtyCard
+      title="Oftalmologia"
+      description="Con nuestro servicio de oftalmologia podras encontrar el abordaje de patologias oftalmologicas, procedimientos quirurgicos, atencion prioritaria y manejo de urgencias de la especialidad."
+      icon="https://cmeo.com.co/wp-content/uploads/2025/09/logoto2.png"
+      href="/oftalmologia"
+      variant="green"
+    />
+  </section>
+
+  <!-- Specialists Section -->
+  <section class="relative bg-gradient-to-br from-white via-gray-50 to-brand-green-50/30 py-24 lg:py-32 px-4 sm:px-6 overflow-hidden" id="especialistas">
+    <!-- Decorative elements -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-brand-green-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-80 h-80 bg-brand-pink-500/5 rounded-full blur-3xl"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-16">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green-100 text-brand-green-700 text-sm font-semibold mb-4">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          Equipo medico
+        </span>
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          Nuestros especialistas
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Profesionales altamente calificados comprometidos con tu bienestar y salud.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+        <DoctorCard
+          name="Dra. Carolina Campuzano"
+          specialty="Otorrinolaringologa"
+          image="https://cmeo.com.co/wp-content/uploads/2025/09/carolina.png"
+          specialtyUrl="/dra-carolina-campuzano"
+          appointmentUrl="/contacto?especialidad=otorrino"
+          accentColor="pink"
+        />
+        <DoctorCard
+          name="Dr. Edgar Daniel Avila"
+          specialty="Oftalmologo"
+          image="https://cmeo.com.co/wp-content/uploads/2025/09/edgar.png"
+          specialtyUrl="/dr-daniel-avila"
+          appointmentUrl="/contacto?especialidad=oftalmo"
+          accentColor="green"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section class="relative bg-white py-24 lg:py-32 px-4 sm:px-6 overflow-hidden">
+    <!-- Decorative pattern -->
+    <div class="absolute inset-0 opacity-[0.02]">
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green-100 text-brand-green-700 text-sm font-semibold mb-4">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+        </svg>
+        Respaldo profesional
+      </span>
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Certificaciones profesionales
+      </h2>
+      <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+        Nuestros especialistas cuentan con avales oficiales que respaldan su formacion y experiencia.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <CertificationCard
+          title="Otorrinolaringologia"
+          image="https://cmeo.com.co/wp-content/uploads/2025/09/certificado-otorrino.png"
+          iconColor="green"
+        />
+        <CertificationCard
+          title="Oftalmologia"
+          image="https://cmeo.com.co/wp-content/uploads/2025/09/certificado-oftalmo.png"
+          iconColor="teal"
+        />
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

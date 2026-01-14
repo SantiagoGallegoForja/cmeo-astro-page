@@ -1,0 +1,128 @@
+<header class="bg-white shadow-md relative w-full z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 py-2">
+      <!-- Logo -->
+      <a href="/#" class="flex-shrink-0">
+        <img src="https://cmeo.com.co/wp-content/uploads/2025/09/logo.png" alt="Logo" class="w-auto object-contain" style="height: 70px"/>
+      </a>
+
+      <!-- Menú Desktop -->
+      <nav class="hidden md:flex space-x-6 items-center">
+        <a href="/#" class="nav-link">Inicio</a>
+        <a href="#especialistas" class="nav-link">Especialistas</a>
+        <a href="/servicios" class="nav-link">Servicios</a>
+        <a href="/nosotros" class="nav-link">Sobre nosotros</a>
+        <a href="/formulario-contacto" class="nav-link">Contacto</a>
+        <a href="/formulario-contacto" class="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full px-4 py-2 transition">
+          Agenda tu cita
+        </a>
+      </nav>
+
+      <!-- Botón menú móvil -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-700 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay + Panel Off-canvas -->
+  <div id="mobile-menu" class="md:hidden fixed inset-0 z-[60] hidden">
+    <!-- Fondo semitransparente -->
+    <div id="menu-backdrop" class="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Panel que se desliza -->
+    <div id="menu-panel"
+         class="absolute right-0 top-0 h-screen w-[85vw] max-w-sm bg-white shadow-xl transform translate-x-full transition-transform duration-300 will-change-transform">
+      <div class="flex justify-end p-4">
+        <button id="close-menu" class="text-gray-700" aria-label="Cerrar menú">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="flex flex-col items-start p-6 space-y-4 overflow-y-auto h-[calc(100vh-64px)]">
+        <a href="/#" class="text-[15px] text-gray-800">Inicio</a>
+        <a href="/servicios" class="text-[15px] text-gray-800">Servicios</a>
+        <a href="/nosotros" class="text-[15px] text-gray-800">Sobre nosotros</a>
+        <a href="/formulario-contacto" class="text-[15px] text-gray-800">Contacto</a>
+        <a href="/formulario-contacto" class="bg-green-600 hover:bg-green-700 text-white text-sm font-semibold rounded-full px-4 py-2">
+          Agenda tu cita
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav-link {
+    position: relative;
+    font-size: 15px;
+    color: #374151;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #009c6e;
+    transition: width 0.3s ease-in-out;
+  }
+  .nav-link:hover::before { width: 100%; }
+  * { box-sizing: border-box; }
+  /* Evita scroll horizontal global */
+  html, body { overflow-x: hidden; }
+</style>
+
+<script>
+  (function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuPanel  = document.getElementById("menu-panel");
+    const backdrop   = document.getElementById("menu-backdrop");
+    const closeBtn   = document.getElementById("close-menu");
+
+    if (!menuToggle || !mobileMenu || !menuPanel || !backdrop || !closeBtn) return;
+
+    const openMenu = () => {
+      mobileMenu.classList.remove("hidden");      // muestra overlay
+      requestAnimationFrame(() => {
+        menuPanel.classList.remove("translate-x-full");
+        backdrop.classList.add("opacity-100");
+        backdrop.classList.remove("opacity-0");
+      });
+      document.body.classList.add("overflow-hidden"); // bloquea scroll del body
+    };
+
+    const closeMenu = () => {
+      menuPanel.classList.add("translate-x-full");
+      backdrop.classList.remove("opacity-100");
+      backdrop.classList.add("opacity-0");
+      // espera la transición para ocultar el overlay
+      setTimeout(() => {
+        mobileMenu.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+      }, 300);
+    };
+
+    menuToggle.addEventListener("click", (e) => { e.stopPropagation(); openMenu(); });
+    closeBtn.addEventListener("click", (e) => { e.stopPropagation(); closeMenu(); });
+
+    // Cerrar al tocar fuera del panel
+    backdrop.addEventListener("click", closeMenu);
+
+    // Cerrar con links
+    menuPanel.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+
+    // Cerrar con Esc
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+  })();
+</script>

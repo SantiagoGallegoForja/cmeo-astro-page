@@ -1,0 +1,57 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/sections/PageHero.astro';
+import ServiceCard from '../components/sections/ServiceCard.astro';
+
+const services = [
+  {
+    title: 'Nasofibrolaringoscopia',
+    description: 'Herramienta diagnostica no invasiva para visualizar las vias respiratorias superiores. Ideal para detectar problemas de nariz, garganta y laringe.',
+    image: 'https://cmeo.com.co/wp-content/uploads/2025/09/ss1.png',
+    href: '/nasofibrolaringoscopia'
+  },
+  {
+    title: 'Rinoplastia',
+    description: 'Cirugia para mejorar estetica y funcionalmente la nariz. Corrige defectos congenitos, traumatismos o simplemente mejora la armonia facial.',
+    image: 'https://cmeo.com.co/wp-content/uploads/2025/09/ss2.png',
+    href: '/rinoplastia'
+  },
+  {
+    title: 'Oftalmologia',
+    description: 'Evaluacion y tratamiento de enfermedades oculares en pacientes pediatricos y adultos. Diagnosticos precisos para cuidar tu salud visual.',
+    image: 'https://cmeo.com.co/wp-content/uploads/2025/09/ss4.jpg',
+    href: '/oftalmologia'
+  },
+  {
+    title: 'Otorrinolaringologia',
+    description: 'Tratamiento integral de oidos, nariz, garganta y laringe. Atencion especializada tanto para ninos como adultos.',
+    image: 'https://cmeo.com.co/wp-content/uploads/2025/09/ss5.jpg',
+    href: '/otorrinolaringologia'
+  }
+];
+---
+
+<PageLayout title="Servicios" description="Conoce todos los servicios medicos que ofrecemos en CMEO Especialistas">
+
+  <PageHero
+    title="Servicios"
+    backgroundImage="https://cmeo.com.co/wp-content/uploads/2025/09/servicesSlider.jpg"
+    height="h-[40vh]"
+  />
+
+  <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+          <ServiceCard
+            title={service.title}
+            description={service.description}
+            image={service.image}
+            href={service.href}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

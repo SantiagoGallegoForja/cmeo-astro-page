@@ -1,0 +1,77 @@
+---
+interface Props {
+  title: string;
+  image: string;
+  iconColor?: 'green' | 'teal';
+}
+
+const { title, image, iconColor = 'green' } = Astro.props;
+
+const variantClasses = {
+  green: {
+    iconBg: 'bg-brand-green-100 text-brand-green-600 group-hover:bg-brand-green-500 group-hover:text-white',
+    border: 'border-brand-green-100 hover:border-brand-green-300',
+    glow: 'group-hover:shadow-green-glow',
+  },
+  teal: {
+    iconBg: 'bg-teal-100 text-teal-600 group-hover:bg-teal-500 group-hover:text-white',
+    border: 'border-teal-100 hover:border-teal-300',
+    glow: 'group-hover:shadow-soft-lg',
+  },
+};
+
+const classes = variantClasses[iconColor];
+---
+
+<div class:list={[
+  'group relative bg-white rounded-3xl overflow-hidden',
+  'shadow-soft hover:shadow-soft-xl',
+  'border-2 transition-all duration-500 ease-out hover:-translate-y-2',
+  'p-6 lg:p-8 flex flex-col items-center text-center',
+  classes.border, classes.glow
+]}>
+  <!-- Badge -->
+  <div class:list={[
+    'w-14 h-14 rounded-2xl flex items-center justify-center mb-5',
+    'transition-all duration-300',
+    classes.iconBg
+  ]}>
+    <svg
+      class="w-7 h-7"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      />
+    </svg>
+  </div>
+
+  <!-- Image -->
+  <div class="relative w-full mb-5">
+    <div class="rounded-2xl overflow-hidden shadow-soft border border-gray-100
+                transition-all duration-500 group-hover:shadow-soft-lg">
+      <img
+        src={image}
+        alt={`Certificado ${title}`}
+        class="w-full h-auto transform transition-transform duration-700 group-hover:scale-105"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
+  <!-- Title -->
+  <h3 class="text-lg font-bold text-gray-900">{title}</h3>
+
+  <!-- Verified badge -->
+  <div class="mt-3 inline-flex items-center gap-1.5 text-sm text-gray-500">
+    <svg class="w-4 h-4 text-brand-green-500" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+    </svg>
+    Verificado
+  </div>
+</div>

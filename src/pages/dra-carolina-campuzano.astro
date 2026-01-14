@@ -1,0 +1,75 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const credentials = [
+  {
+    title: 'Medica egresada',
+    institution: 'Fundacion Universitaria San Martin'
+  },
+  {
+    title: 'Especialista en Otorrinolaringologia',
+    institution: 'Universidad Militar Nueva Granada'
+  }
+];
+---
+
+<PageLayout title="Dra. Carolina Campuzano" description="Perfil de la Dra. Carolina Campuzano - Otorrinolaringologa en CMEO Especialistas">
+
+  <section class="bg-white py-16 lg:py-20 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Photo -->
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-xl">
+          <img
+            src="https://cmeo.com.co/wp-content/uploads/2025/09/carolina.png"
+            alt="Dra. Carolina Campuzano"
+            class="w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Doctor Info -->
+      <div>
+        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          Dra. Carolina Campuzano
+        </h1>
+        <p class="text-lg text-gray-600 mb-8">
+          Medica - Especialista en otorrinolaringologia
+        </p>
+
+        <div class="space-y-5">
+          {credentials.map(cred => (
+            <div class="flex items-start gap-4">
+              <div class="bg-brand-green-500 text-white p-3 rounded-full flex-shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-gray-800 font-medium">{cred.title}:</p>
+                <p class="text-gray-600">{cred.institution}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a
+            href="/contacto?especialidad=otorrino"
+            class="btn btn-primary btn-lg"
+          >
+            Agendar cita con la doctora
+          </a>
+          <a
+            href="/otorrino"
+            class="btn btn-secondary btn-lg"
+          >
+            Ver servicios de otorrino
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>

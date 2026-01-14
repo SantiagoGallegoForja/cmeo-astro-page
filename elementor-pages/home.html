@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMEO - Especialistas</title>
+    <!-- Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    
+    [wpcode id="98"]
+    
+    <!-- Slider - Reduced height for better integration -->
+    <section class="relative h-[70vh] w-full overflow-hidden">
+      <div
+        id="slider"
+        class="absolute inset-0 z-0 transition-opacity duration-1000"
+      >
+        <img
+          src="https://cmeo.com.co/wp-content/uploads/2025/09/slide1.png"
+          alt="Slide 1"
+          class="w-full h-full object-cover absolute inset-0 opacity-100 slider-img"
+        />
+        <img
+          src="https://cmeo.com.co/wp-content/uploads/2025/09/slide1.png"
+          alt="Slide 2"
+          class="w-full h-full object-cover absolute inset-0 opacity-0 slider-img"
+        />
+        <img
+          src="https://cmeo.com.co/wp-content/uploads/2025/09/slide1.png"
+          alt="Slide 3"
+          class="w-full h-full object-cover absolute inset-0 opacity-0 slider-img"
+        />
+      </div>
+
+      <!-- Formulario flotante -->
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-[90%] max-w-5xl bg-gray-400 p-6 rounded-xl shadow-lg z-10 backdrop-blur-md"
+      >
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">
+          Solicita tu cita
+        </h3>
+        <form class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <input
+            type="text"
+            placeholder="Nombre"
+            class="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600"
+          />
+          <input
+            type="email"
+            placeholder="Correo"
+            class="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600"
+          />
+          <input
+            type="tel"
+            placeholder="Número de celular"
+            class="rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600"
+          />
+
+          <div class="col-span-1 md:col-span-1">
+            <label class="block text-gray-700 mb-1">Fecha probable de cita</label>
+            <input
+              type="date"
+              class="w-full rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600"
+            />
+          </div>
+
+          <div class="col-span-1 md:col-span-1">
+            <label class="block text-gray-700 mb-1">Especialidad</label>
+            <select
+              class="w-full rounded px-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600"
+            >
+              <option>Seleccione</option>
+              <option>Otorrinolaringología</option>
+              <option>Oftalmología</option>
+            </select>
+          </div>
+
+          <div class="col-span-1 md:col-span-1 flex items-end">
+            <button
+              type="submit"
+              class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded transition"
+            >
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Especialidades Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 text-white text-center">
+      <!-- Otorrinolaringología -->
+      <div
+        class="bg-[#e10074] px-6 py-16 flex flex-col items-center justify-center"
+      >
+        <img
+          src="https://cmeo.com.co/wp-content/uploads/2025/09/logoto.png"
+          alt="Otorrinolaringología"
+          class="w-36 h-36 mb-6"
+        />
+        <h3 class="text-2xl font-bold mb-3">Otorrinolaringología</h3>
+        <p class="text-base mb-8 max-w-sm">
+          Con nuestro servicio de otorrinolaringología podrás encontrar el
+          abordaje de las patologías de oídos, nariz, garganta y laringe,
+          intervenciones quirúrgicas de funcionalidad, tratamientos cosméticos y
+          manejo de urgencias de la especialidad.
+        </p>
+        <a
+          href="/otorrino"
+          class="bg-white text-[#e10074] font-semibold px-6 py-2 rounded-full hover:bg-gray-100 transition"
+        >
+          Ver más
+        </a>
+      </div>
+
+      <!-- Oftalmología -->
+      <div
+        class="bg-[#009c6e] px-6 py-16 flex flex-col items-center justify-center"
+      >
+        <img
+          src="https://cmeo.com.co/wp-content/uploads/2025/09/logoto2.png"
+          alt="Oftalmología"
+          class="w-36 h-36 mb-6"
+        />
+        <h3 class="text-2xl font-bold mb-3">Oftalmología</h3>
+        <p class="text-base mb-8 max-w-sm">
+          Con nuestro servicio de oftalmología podrás encontrar el abordaje de
+          patologías oftalmológicas, procedimientos quirúrgicos, atención
+          prioritaria y manejo de urgencias de la especialidad.
+        </p>
+        <a
+          href="/oftalmologia"
+          class="bg-white text-[#009c6e] font-semibold px-6 py-2 rounded-full hover:bg-green-100 transition"
+        >
+          Ver más
+        </a>
+      </div>
+    </section>
+
+    <!-- Especialistas Section -->
+    <section class="bg-white py-20 px-6" id="especialistas">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-7xl mx-auto mb-12">
+          <h4 class="text-lg text-gray-500 mb-2">CMEO</h4>
+          <h2 class="text-3xl font-bold text-gray-900">
+            Nuestros especialistas
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div
+            class="bg-white rounded-[2rem] shadow-lg overflow-hidden flex flex-col items-center pb-8 border border-blue-100 scale-[1.05]"
+          >
+            <img
+              src="https://cmeo.com.co/wp-content/uploads/2025/09/carolina.png"
+              alt="Dra. Carolina Campuzano"
+              class="w-full h-auto object-contain"
+            />
+            <div class="text-center mt-6 px-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-1">
+                Dra. Carolina Campuzano
+              </h3>
+              <p class="text-base text-gray-600 mb-6">Otorrinolaringóloga</p>
+              <div class="flex justify-center gap-4">
+                <a
+                  href="/otorrino"
+                  class="bg-green-600 hover:bg-green-700 text-white text-base px-6 py-3 rounded-full font-semibold transition"
+                >
+                  Ver especialista
+                </a>
+                <a
+                  href="/otorrino?cta=agendar"
+                  class="bg-blue-600 hover:bg-blue-700 text-white text-base px-6 py-3 rounded-full font-semibold transition"
+                >
+                  Agendar cita
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dr. Edgar -->
+          <div
+            class="bg-white rounded-[2rem] shadow-lg overflow-hidden flex flex-col items-center pb-8 border border-green-100 scale-[1.05]"
+          >
+            <img
+              src="https://cmeo.com.co/wp-content/uploads/2025/09/edgar.png"
+              alt="Dr. Edgar Daniel"
+              class="w-full h-auto object-contain"
+            />
+            <div class="text-center mt-6 px-6">
+              <h3 class="text-2xl font-bold text-gray-800 mb-1">
+                Dr. Edgar Daniel
+              </h3>
+              <p class="text-base text-gray-600 mb-6">Oftalmólogo</p>
+              <div class="flex justify-center gap-4">
+                <a
+                  href="/oftalmologia"
+                  class="bg-green-600 hover:bg-green-700 text-white text-base px-6 py-3 rounded-full font-semibold transition"
+                >
+                  Ver especialista
+                </a>
+                <a
+                  href="/oftalmologia?cta=agendar"
+                  class="bg-blue-600 hover:bg-blue-700 text-white text-base px-6 py-3 rounded-full font-semibold transition"
+                >
+                  Agendar cita
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificaciones Section -->
+    <section class="bg-gray-50 py-20 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          Certificaciones profesionales
+        </h2>
+        <p class="text-gray-600 text-lg mb-10">
+          Nuestros especialistas cuentan con avales oficiales que respaldan su
+          formación y experiencia.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <!-- Card 1 -->
+          <div
+            class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-3 flex flex-col items-center text-center hover:-translate-y-1 transform"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mb-2"
+            >
+              <svg
+                class="w-5 h-5 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12l2 2l4 -4m1 -5H7a2 2 0 0 0 -2 2v14l7 -3l7 3V5a2 2 0 0 0 -2 -2z"
+                />
+              </svg>
+            </div>
+            <img
+              src="https://cmeo.com.co/wp-content/uploads/2025/09/certificado-otorrino.png"
+              alt="Certificado Otorrino"
+              class="rounded-md shadow-sm w-3/4 h-auto mb-2"
+            />
+            <h3 class="text-base font-medium text-gray-800">
+              Otorrinolaringología
+            </h3>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="group bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-3 flex flex-col items-center text-center hover:-translate-y-1 transform"
+          >
+            <div
+              class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center mb-2"
+            >
+              <svg
+                class="w-5 h-5 text-teal-600"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12l2 2l4 -4m1 -5H7a2 2 0 0 0 -2 2v14l7 -3l7 3V5a2 2 0 0 0 -2 -2z"
+                />
+              </svg>
+            </div>
+            <img
+              src="https://cmeo.com.co/wp-content/uploads/2025/09/certificado-oftalmo.png"
+              alt="Certificado Oftalmología"
+              class="rounded-md shadow-sm w-3/4 h-auto mb-2"
+            />
+            <h3 class="text-base font-medium text-gray-800">Oftalmología</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    [wpcode id="126"]
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile menu functionality
+      const toggle = document.getElementById("menu-toggle");
+      const close = document.getElementById("close-menu");
+      const menu = document.getElementById("mobile-menu");
+
+      toggle.addEventListener("click", () => {
+        menu.classList.remove("translate-x-full");
+      });
+
+      close.addEventListener("click", () => {
+        menu.classList.add("translate-x-full");
+      });
+
+      // Slider functionality
+      const slides = document.querySelectorAll(".slider-img");
+      let current = 0;
+
+      function showSlide(index) {
+        slides.forEach((img, i) => {
+          img.classList.remove("opacity-100");
+          img.classList.add("opacity-0");
+          if (i === index) {
+            img.classList.add("opacity-100");
+          }
+        });
+      }
+
+      function nextSlide() {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }
+
+      setInterval(nextSlide, 4000); // cambia cada 4 segundos
+    </script>
+  </body>
+</html>

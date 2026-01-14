@@ -1,0 +1,70 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/sections/PageHero.astro';
+---
+
+<PageLayout title="Sobre Nosotros" description="Conoce mas sobre CMEO Especialistas del Oriente">
+
+  <PageHero
+    title="Sobre Nosotros"
+    backgroundImage="https://cmeo.com.co/wp-content/uploads/2025/09/slider-us.jpg"
+    height="h-[50vh]"
+  />
+
+  <section class="bg-white py-16 lg:py-20 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Text Content -->
+      <div>
+        <h2 class="text-2xl lg:text-3xl font-bold text-gray-800 mb-6">Quienes somos?</h2>
+
+        <div class="space-y-4 text-gray-600 leading-relaxed">
+          <p>
+            Somos un grupo de medicos y especialistas en oftalmologia, otorrinolaringologia y audiologia con un enfoque en el cuidado y tratamiento de las diferentes patologias que afectan los organos de los sentidos.
+          </p>
+          <p>
+            Buscamos garantizar a todos nuestros pacientes la integralidad y continuidad en la atencion, con un enfoque humano, seguimiento clinico y tratamiento individualizado.
+          </p>
+          <p>
+            Planteamos los casos complejos en juntas medicas y quirurgicas para definir el mejor abordaje, integrando un equipo multidisciplinario segun las necesidades de cada paciente.
+          </p>
+        </div>
+
+        <div class="mt-8 p-6 bg-gray-50 rounded-xl">
+          <h3 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            Encuentranos en:
+          </h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            City Medica Torre de Especialistas, carrera 55a #35-251<br/>
+            Rionegro, Antioquia - Consultorio 409 Torre 2.
+          </p>
+        </div>
+      </div>
+
+      <!-- Logo + CTA -->
+      <div class="flex flex-col items-center justify-center">
+        <img
+          src="https://cmeo.com.co/wp-content/uploads/2025/09/logo.png"
+          alt="CMEO Especialistas"
+          class="w-64 mb-8"
+        />
+        <a
+          href="https://maps.app.goo.gl/QSWfUR7tHXe5XgXM6"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-blue btn-lg"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          Ver en Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
