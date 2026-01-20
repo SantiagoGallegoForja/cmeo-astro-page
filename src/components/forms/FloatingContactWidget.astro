@@ -83,8 +83,8 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
 
         <!-- Nombre -->
         <div class="relative">
-          <label class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-brand-pink-500 z-10">
-            Nombre completo <span>*</span>
+          <label class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-gray-600 z-10">
+            Nombre completo <span class="text-brand-pink-500">*</span>
           </label>
           <input
             type="text"
@@ -93,15 +93,15 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
             required
             class="w-full px-5 py-3.5 bg-white border-2 border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400
                    transition-all duration-300
-                   hover:border-brand-pink-200
-                   focus:outline-none focus:border-brand-pink-400 focus:ring-4 focus:ring-brand-pink-100"
+                   hover:border-brand-green-300
+                   focus:outline-none focus:border-brand-green-500 focus:ring-4 focus:ring-brand-green-100"
           />
         </div>
 
         <!-- Correo -->
         <div class="relative">
-          <label class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-brand-pink-500 z-10">
-            Correo electronico <span>*</span>
+          <label class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-gray-600 z-10">
+            Correo electronico <span class="text-brand-pink-500">*</span>
           </label>
           <input
             type="email"
@@ -110,15 +110,15 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
             required
             class="w-full px-5 py-3.5 bg-white border-2 border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400
                    transition-all duration-300
-                   hover:border-brand-pink-200
-                   focus:outline-none focus:border-brand-pink-400 focus:ring-4 focus:ring-brand-pink-100"
+                   hover:border-brand-green-300
+                   focus:outline-none focus:border-brand-green-500 focus:ring-4 focus:ring-brand-green-100"
           />
         </div>
 
         <!-- Celular -->
         <div class="relative">
-          <label class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-brand-pink-500 z-10">
-            Celular <span>*</span>
+          <label class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-gray-600 z-10">
+            Celular <span class="text-brand-pink-500">*</span>
           </label>
           <div class="flex">
             <div class="flex items-center px-3 bg-gray-50 border-2 border-r-0 border-gray-200 rounded-l-2xl text-gray-500 text-sm font-medium">
@@ -130,16 +130,16 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
               placeholder="300 123 4567"
               class="w-full px-4 py-3.5 bg-white border-2 border-l-0 border-gray-200 rounded-r-2xl text-gray-800 placeholder-gray-400
                      transition-all duration-300
-                     hover:border-brand-pink-200
-                     focus:outline-none focus:border-brand-pink-400 focus:ring-4 focus:ring-brand-pink-100"
+                     hover:border-brand-green-300
+                     focus:outline-none focus:border-brand-green-500 focus:ring-4 focus:ring-brand-green-100"
             />
           </div>
         </div>
 
         <!-- Mensaje -->
         <div class="relative">
-          <label class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-brand-pink-500 z-10">
-            ¿En que podemos ayudarte? <span>*</span>
+          <label class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-gray-600 z-10">
+            ¿En que podemos ayudarte? <span class="text-brand-pink-500">*</span>
           </label>
           <div class="relative">
             <svg class="absolute top-3.5 left-4 w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,8 +152,8 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
               required
               class="w-full pl-12 pr-5 py-3.5 bg-white border-2 border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400 resize-none
                      transition-all duration-300
-                     hover:border-brand-pink-200
-                     focus:outline-none focus:border-brand-pink-400 focus:ring-4 focus:ring-brand-pink-100"
+                     hover:border-brand-green-300
+                     focus:outline-none focus:border-brand-green-500 focus:ring-4 focus:ring-brand-green-100"
             ></textarea>
           </div>
         </div>
@@ -163,8 +163,8 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
           <button
             type="submit"
             id="floating-submit-btn"
-            class="w-full px-6 py-3.5 bg-gradient-to-r from-brand-pink-400 to-brand-pink-500 text-white font-bold rounded-2xl
-                   shadow-lg hover:shadow-xl hover:from-brand-pink-500 hover:to-brand-pink-600
+            class="w-full px-6 py-3.5 bg-gradient-to-r from-brand-green-500 to-brand-green-600 text-white font-bold rounded-2xl
+                   shadow-lg hover:shadow-xl hover:from-brand-green-600 hover:to-brand-green-700
                    transform hover:-translate-y-0.5 active:translate-y-0
                    transition-all duration-300
                    flex items-center justify-center gap-2 group"
