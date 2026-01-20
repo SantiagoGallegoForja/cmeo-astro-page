@@ -35,32 +35,37 @@ const { showMap = true, preselectedSpecialty } = Astro.props;
     ]}>
       <!-- Contact Form -->
       <div class="order-1 lg:order-none">
-        <div class="bg-white p-8 lg:p-10 rounded-3xl shadow-soft-lg border border-gray-100 relative">
+        <div class="bg-white p-8 lg:p-10 rounded-3xl shadow-soft-lg border border-gray-100 relative overflow-hidden">
+          <!-- Decorative gradient background -->
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-pink-50/30 via-white to-brand-green-50/20 pointer-events-none"></div>
+
           <!-- Accent line -->
-          <div class="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-brand-green-500 via-brand-pink-500 to-brand-blue-500 rounded-full"></div>
+          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-green-500 via-brand-pink-500 to-brand-blue-500"></div>
 
-          <form id="contact-form" class="space-y-5">
-            <!-- Nombre completo -->
-            <div>
-              <label for="nombre" class="form-label">
-                Nombre completo <span class="text-brand-pink-500">*</span>
-              </label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                placeholder="Tu nombre completo"
-                required
-                autocomplete="name"
-                class="form-input"
-              />
-            </div>
-
-            <!-- Correo y Telefono en grid -->
+          <form id="contact-form" class="relative space-y-5">
+            <!-- Row 1: Nombre y Correo -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label for="email" class="form-label">
-                  Correo <span class="text-brand-pink-500">*</span>
+              <div class="relative">
+                <label for="nombre" class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-brand-pink-500 z-10">
+                  Nombre completo <span>*</span>
+                </label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Tu nombre"
+                  required
+                  autocomplete="name"
+                  class="w-full px-5 py-4 bg-white border-2 border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400
+                         transition-all duration-300
+                         hover:border-brand-pink-200
+                         focus:outline-none focus:border-brand-pink-400 focus:ring-4 focus:ring-brand-pink-100"
+                />
+              </div>
+
+              <div class="relative">
+                <label for="email" class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-brand-pink-500 z-10">
+                  Correo electronico <span>*</span>
                 </label>
                 <input
                   type="email"
@@ -69,68 +74,100 @@ const { showMap = true, preselectedSpecialty } = Astro.props;
                   placeholder="correo@ejemplo.com"
                   required
                   autocomplete="email"
-                  class="form-input"
+                  class="w-full px-5 py-4 bg-white border-2 border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400
+                         transition-all duration-300
+                         hover:border-brand-pink-200
+                         focus:outline-none focus:border-brand-pink-400 focus:ring-4 focus:ring-brand-pink-100"
                 />
               </div>
+            </div>
 
-              <div>
-                <label for="telefono" class="form-label">
-                  Telefono
+            <!-- Row 2: Celular y Especialidad -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="relative">
+                <label for="telefono" class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-brand-pink-500 z-10">
+                  Celular <span>*</span>
                 </label>
-                <input
-                  type="tel"
-                  id="telefono"
-                  name="telefono"
-                  placeholder="300 123 4567"
-                  autocomplete="tel"
-                  class="form-input"
-                />
+                <div class="flex">
+                  <div class="flex items-center px-4 bg-gray-50 border-2 border-r-0 border-gray-200 rounded-l-2xl text-gray-500 text-sm font-medium">
+                    <span class="text-xs mr-1">CO</span> +57
+                  </div>
+                  <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="300 123 4567"
+                    autocomplete="tel"
+                    class="w-full px-4 py-4 bg-white border-2 border-l-0 border-gray-200 rounded-r-2xl text-gray-800 placeholder-gray-400
+                           transition-all duration-300
+                           hover:border-brand-pink-200
+                           focus:outline-none focus:border-brand-pink-400 focus:ring-4 focus:ring-brand-pink-100"
+                  />
+                </div>
+              </div>
+
+              <div class="relative">
+                <label for="especialidad" class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-brand-pink-500 z-10">
+                  Especialidad de interes <span>*</span>
+                </label>
+                <select
+                  id="especialidad"
+                  name="especialidad"
+                  required
+                  class="w-full px-5 py-4 bg-white border-2 border-gray-200 rounded-2xl text-gray-800 appearance-none cursor-pointer
+                         transition-all duration-300
+                         hover:border-brand-pink-200
+                         focus:outline-none focus:border-brand-pink-400 focus:ring-4 focus:ring-brand-pink-100
+                         bg-no-repeat"
+                  style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27%23E91E8C%27 stroke-width=%272%27%3E%3Cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 d=%27M19 9l-7 7-7-7%27/%3E%3C/svg%3E'); background-size: 1.25rem; background-position: right 1rem center;"
+                >
+                  <option value="" disabled selected>Selecciona una opcion</option>
+                  <option value="Otorrinolaringologia">Otorrinolaringologia</option>
+                  <option value="Oftalmologia">Oftalmologia</option>
+                </select>
               </div>
             </div>
 
-            <!-- Especialidad -->
-            <div>
-              <label for="especialidad" class="form-label">
-                Especialidad <span class="text-brand-pink-500">*</span>
+            <!-- Row 3: Mensaje -->
+            <div class="relative">
+              <label for="mensaje" class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-brand-pink-500 z-10">
+                ¿En que podemos ayudarte? <span>*</span>
               </label>
-              <select
-                id="especialidad"
-                name="especialidad"
-                required
-                class="form-input form-select"
-              >
-                <option value="" disabled selected>Selecciona tu interes</option>
-                <option value="Otorrinolaringologia">Otorrinolaringologia</option>
-                <option value="Oftalmologia">Oftalmologia</option>
-              </select>
+              <div class="relative">
+                <svg class="absolute top-4 left-4 w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  placeholder="Escribe tu mensaje aqui..."
+                  rows="4"
+                  required
+                  class="w-full pl-12 pr-5 py-4 bg-white border-2 border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400 resize-none
+                         transition-all duration-300
+                         hover:border-brand-pink-200
+                         focus:outline-none focus:border-brand-pink-400 focus:ring-4 focus:ring-brand-pink-100"
+                ></textarea>
+              </div>
             </div>
 
-            <!-- Mensaje -->
-            <div>
-              <label for="mensaje" class="form-label">
-                Mensaje <span class="text-brand-pink-500">*</span>
-              </label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                placeholder="Cuentanos como podemos ayudarte..."
-                rows="4"
-                required
-                class="form-input resize-none"
-              ></textarea>
-            </div>
-
-            <!-- Boton enviar -->
-            <div class="pt-2">
+            <!-- Submit Button -->
+            <div class="pt-3">
               <button
                 type="submit"
                 id="contact-submit-btn"
-                class="btn btn-primary btn-lg w-full justify-center group"
+                class="w-full px-8 py-4 bg-gradient-to-r from-brand-pink-400 to-brand-pink-500 text-white font-bold text-lg rounded-2xl
+                       shadow-lg hover:shadow-xl hover:from-brand-pink-500 hover:to-brand-pink-600
+                       transform hover:-translate-y-0.5 active:translate-y-0
+                       transition-all duration-300
+                       flex items-center justify-center gap-3 group"
               >
-                <span data-button-text>Enviar mensaje</span>
+                <svg class="w-5 h-5" data-button-icon fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span data-button-text>Solicitar Mi Consulta</span>
                 <svg
                   class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-                  data-button-icon
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -147,6 +184,28 @@ const { showMap = true, preselectedSpecialty } = Astro.props;
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
                 </svg>
               </button>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-4 text-sm text-gray-500">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-brand-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Respuesta en 24h</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-brand-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Sin compromiso</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-brand-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>100% confidencial</span>
+              </div>
             </div>
           </form>
 
