@@ -81,8 +81,9 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
       <form id="floating-contact-form" class="space-y-4">
         <input type="hidden" name="especialidad" value={specialtyValue} />
 
+        <!-- Nombre -->
         <div>
-          <label class="form-label">Nombre</label>
+          <label class="form-label">Nombre <span class="text-brand-pink-500">*</span></label>
           <input
             type="text"
             name="nombre"
@@ -92,29 +93,33 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
           />
         </div>
 
-        <div>
-          <label class="form-label">Correo</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="correo@ejemplo.com"
-            required
-            class="form-input"
-          />
+        <!-- Correo y Telefono en grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="form-label">Correo <span class="text-brand-pink-500">*</span></label>
+            <input
+              type="email"
+              name="email"
+              placeholder="correo@ejemplo.com"
+              required
+              class="form-input"
+            />
+          </div>
+
+          <div>
+            <label class="form-label">Telefono</label>
+            <input
+              type="tel"
+              name="telefono"
+              placeholder="300 123 4567"
+              class="form-input"
+            />
+          </div>
         </div>
 
+        <!-- Mensaje -->
         <div>
-          <label class="form-label">Telefono</label>
-          <input
-            type="tel"
-            name="telefono"
-            placeholder="300 123 4567"
-            class="form-input"
-          />
-        </div>
-
-        <div>
-          <label class="form-label">Mensaje</label>
+          <label class="form-label">Mensaje <span class="text-brand-pink-500">*</span></label>
           <textarea
             name="mensaje"
             placeholder="Escribe tu mensaje aqui..."
@@ -124,31 +129,34 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
           ></textarea>
         </div>
 
-        <button
-          type="submit"
-          id="floating-submit-btn"
-          class="btn btn-primary btn-lg w-full justify-center group"
-        >
-          <span data-button-text>Enviar mensaje</span>
-          <svg
-            class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-            data-button-icon
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <!-- Boton enviar -->
+        <div class="pt-1">
+          <button
+            type="submit"
+            id="floating-submit-btn"
+            class="btn btn-primary btn-lg w-full justify-center group"
           >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-          </svg>
-          <svg
-            class="w-5 h-5 animate-spin hidden"
-            data-loading-spinner
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
-          </svg>
-        </button>
+            <span data-button-text>Enviar mensaje</span>
+            <svg
+              class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+              data-button-icon
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+            <svg
+              class="w-5 h-5 animate-spin hidden"
+              data-loading-spinner
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+            </svg>
+          </button>
+        </div>
       </form>
 
       <div id="floating-status" class="hidden mt-4 p-4 rounded-xl text-sm font-medium" role="alert"></div>

@@ -39,7 +39,8 @@ const { showMap = true, preselectedSpecialty } = Astro.props;
           <!-- Accent line -->
           <div class="absolute top-0 left-8 right-8 h-1 bg-gradient-to-r from-brand-green-500 via-brand-pink-500 to-brand-blue-500 rounded-full"></div>
 
-          <form id="contact-form" class="space-y-6">
+          <form id="contact-form" class="space-y-5">
+            <!-- Nombre completo -->
             <div>
               <label for="nombre" class="form-label">
                 Nombre completo <span class="text-brand-pink-500">*</span>
@@ -55,7 +56,8 @@ const { showMap = true, preselectedSpecialty } = Astro.props;
               />
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- Correo y Telefono en grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label for="email" class="form-label">
                   Correo <span class="text-brand-pink-500">*</span>
@@ -86,6 +88,7 @@ const { showMap = true, preselectedSpecialty } = Astro.props;
               </div>
             </div>
 
+            <!-- Especialidad -->
             <div>
               <label for="especialidad" class="form-label">
                 Especialidad <span class="text-brand-pink-500">*</span>
@@ -102,6 +105,7 @@ const { showMap = true, preselectedSpecialty } = Astro.props;
               </select>
             </div>
 
+            <!-- Mensaje -->
             <div>
               <label for="mensaje" class="form-label">
                 Mensaje <span class="text-brand-pink-500">*</span>
@@ -116,31 +120,34 @@ const { showMap = true, preselectedSpecialty } = Astro.props;
               ></textarea>
             </div>
 
-            <button
-              type="submit"
-              id="contact-submit-btn"
-              class="btn btn-primary btn-lg w-full justify-center group"
-            >
-              <span data-button-text>Enviar mensaje</span>
-              <svg
-                class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-                data-button-icon
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+            <!-- Boton enviar -->
+            <div class="pt-2">
+              <button
+                type="submit"
+                id="contact-submit-btn"
+                class="btn btn-primary btn-lg w-full justify-center group"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-              </svg>
-              <svg
-                class="w-5 h-5 animate-spin hidden"
-                data-loading-spinner
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
-              </svg>
-            </button>
+                <span data-button-text>Enviar mensaje</span>
+                <svg
+                  class="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
+                  data-button-icon
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+                <svg
+                  class="w-5 h-5 animate-spin hidden"
+                  data-loading-spinner
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"/>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                </svg>
+              </button>
+            </div>
           </form>
 
           <div id="contact-status" class="hidden mt-5 p-4 rounded-xl text-sm font-medium" role="alert"></div>
