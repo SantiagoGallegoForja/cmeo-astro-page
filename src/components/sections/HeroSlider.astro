@@ -98,14 +98,34 @@ const {
             />
           </div>
           <div class="lg:col-span-1">
-            <input
-              type="tel"
-              name="telefono"
-              placeholder="Celular"
-              class="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-xl text-gray-900 placeholder-gray-400 shadow-sm
-                     hover:border-gray-400 hover:shadow-md
-                     focus:outline-none focus:border-brand-green-500 focus:ring-2 focus:ring-brand-green-500/20 focus:shadow-md transition-all"
-            />
+            <div class="flex">
+              <select
+                name="indicativo"
+                class="appearance-none px-2 py-3 bg-gray-50 border-2 border-r-0 border-gray-300 rounded-l-xl text-gray-600 text-sm font-medium cursor-pointer
+                       hover:bg-gray-100 focus:outline-none focus:bg-white focus:border-brand-green-500
+                       transition-all duration-300"
+                style="min-width: 75px;"
+              >
+                <option value="+57">+57</option>
+                <option value="+1">+1</option>
+                <option value="+52">+52</option>
+                <option value="+34">+34</option>
+                <option value="+51">+51</option>
+                <option value="+56">+56</option>
+                <option value="+54">+54</option>
+                <option value="+593">+593</option>
+                <option value="+58">+58</option>
+                <option value="+507">+507</option>
+              </select>
+              <input
+                type="tel"
+                name="telefono"
+                placeholder="Celular"
+                class="w-full px-3 py-3 bg-white border-2 border-l-0 border-gray-300 rounded-r-xl text-gray-900 placeholder-gray-400 shadow-sm
+                       hover:border-gray-400 hover:shadow-md
+                       focus:outline-none focus:border-brand-green-500 focus:ring-2 focus:ring-brand-green-500/20 focus:shadow-md transition-all"
+              />
+            </div>
           </div>
           <div class="lg:col-span-1">
             <input
@@ -130,6 +150,22 @@ const {
               <option value="otorrinolaringologia">Otorrinolaringologia</option>
               <option value="oftalmologia">Oftalmologia</option>
             </select>
+          </div>
+          <div class="lg:col-span-5">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                name="acepta_terminos"
+                required
+                class="w-4 h-4 rounded border-2 border-gray-300 text-brand-green-500
+                       focus:ring-2 focus:ring-brand-green-500/20
+                       checked:bg-brand-green-500 checked:border-brand-green-500
+                       transition-all duration-200 cursor-pointer accent-brand-green-500"
+              />
+              <span class="text-xs text-gray-600">
+                Acepto la <a href="/politica-privacidad" target="_blank" class="text-brand-green-600 hover:text-brand-green-700 underline font-medium">politica de tratamiento de datos</a>
+              </span>
+            </label>
           </div>
           <div class="lg:col-span-1">
             <button
@@ -231,6 +267,7 @@ const {
           body: JSON.stringify({
             Name: data.nombre,
             Email: data.email,
+            Indicativo: data.indicativo,
             Telefono: data.telefono,
             Fecha: data.fecha,
             Especialidad: data.especialidad,

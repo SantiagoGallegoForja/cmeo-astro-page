@@ -79,7 +79,6 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
 
       <!-- Form -->
       <form id="floating-contact-form" class="space-y-4">
-        <input type="hidden" name="especialidad" value={specialtyValue} />
 
         <!-- Nombre -->
         <div class="relative">
@@ -151,26 +150,43 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
           </div>
         </div>
 
-        <!-- Mensaje -->
+        <!-- Especialidad -->
         <div class="relative">
           <label class="absolute -top-2.5 left-4 px-2 bg-white text-xs font-medium text-gray-600 z-10">
-            ¿En que podemos ayudarte? <span class="text-brand-pink-500">*</span>
+            Especialidad <span class="text-brand-pink-500">*</span>
           </label>
-          <div class="relative">
-            <svg class="absolute top-3.5 left-4 w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-            </svg>
-            <textarea
-              name="mensaje"
-              placeholder="Escribe tu mensaje aqui..."
-              rows="3"
+          <select
+            name="especialidad"
+            required
+            class="w-full px-5 py-3.5 bg-white border-2 border-gray-200 rounded-2xl text-gray-800 appearance-none cursor-pointer
+                   transition-all duration-300
+                   hover:border-brand-green-300
+                   focus:outline-none focus:border-brand-green-500 focus:ring-4 focus:ring-brand-green-100
+                   bg-no-repeat"
+            style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 24 24%27 stroke=%27%236b7280%27 stroke-width=%272%27%3E%3Cpath stroke-linecap=%27round%27 stroke-linejoin=%27round%27 d=%27M19 9l-7 7-7-7%27/%3E%3C/svg%3E'); background-size: 1.25rem; background-position: right 1rem center;"
+          >
+            <option value="" disabled>Selecciona una opcion</option>
+            <option value="Otorrinolaringologia" selected={specialtyValue === 'Otorrinolaringologia'}>Otorrinolaringologia</option>
+            <option value="Oftalmologia" selected={specialtyValue === 'Oftalmologia'}>Oftalmologia</option>
+          </select>
+        </div>
+
+        <!-- Checkbox de terminos -->
+        <div class="relative">
+          <label class="flex items-start gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              name="acepta_terminos"
               required
-              class="w-full pl-12 pr-5 py-3.5 bg-white border-2 border-gray-200 rounded-2xl text-gray-800 placeholder-gray-400 resize-none
-                     transition-all duration-300
-                     hover:border-brand-green-300
-                     focus:outline-none focus:border-brand-green-500 focus:ring-4 focus:ring-brand-green-100"
-            ></textarea>
-          </div>
+              class="mt-0.5 w-4 h-4 rounded border-2 border-gray-300 text-brand-green-500
+                     focus:ring-2 focus:ring-brand-green-500/20
+                     checked:bg-brand-green-500 checked:border-brand-green-500
+                     transition-all duration-200 cursor-pointer accent-brand-green-500"
+            />
+            <span class="text-xs text-gray-600 leading-relaxed">
+              Acepto la <a href="/politica-privacidad" target="_blank" class="text-brand-green-600 hover:text-brand-green-700 underline font-medium">politica de tratamiento de datos</a>
+            </span>
+          </label>
         </div>
 
         <!-- Submit Button -->
@@ -310,11 +326,11 @@ const { doctorName, specialty, specialtyValue } = Astro.props;
           body: JSON.stringify({
             Name: data.nombre,
             Email: data.email,
+            Indicativo: data.indicativo,
             Telefono: data.telefono,
             Especialidad: data.especialidad,
             'Service Type': 'Widget Flotante',
-            Origin: 'cmeo.com.co',
-            Dclid: data.mensaje
+            Origin: 'cmeo.com.co'
           })
         });
 
