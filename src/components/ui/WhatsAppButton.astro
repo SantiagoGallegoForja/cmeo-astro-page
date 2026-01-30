@@ -337,7 +337,10 @@
           }
 
           form.reset();
-          setTimeout(closeWidget, 2500);
+          // Redirect to WhatsApp after 1.5 seconds
+          setTimeout(() => {
+            window.location.href = 'https://wa.me/573224148773';
+          }, 1500);
         } else {
           throw new Error('Server error');
         }
