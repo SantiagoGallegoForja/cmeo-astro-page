@@ -6,45 +6,45 @@ import DoctorCard from '../components/sections/DoctorCard.astro';
 import CertificationCard from '../components/sections/CertificationCard.astro';
 
 const stats = [
-  { number: '8+', label: 'Anos de experiencia', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { number: '8+', label: 'Años de experiencia', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
   { number: '1,200+', label: 'Pacientes atendidos', icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z' },
   { number: '150+', label: 'Procedimientos', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
   { number: '2', label: 'Especialidades', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' },
 ];
 
 const whyChooseUs = [
-  { title: 'Diagnostico Preciso', description: 'Evaluaciones detalladas para encontrar la raiz del problema y tratarlo efectivamente.', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
-  { title: 'Atencion Rapida', description: 'Citas en menos de 48 horas. Tu salud no puede esperar.', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
-  { title: 'Ubicacion Estrategica', description: 'En el corazon del Oriente Antioqueno, facil acceso desde cualquier municipio.', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
-  { title: 'Equipo Especializado', description: 'Profesionales con anos de experiencia y formacion continua.', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' },
-  { title: 'Multiples Coberturas', description: 'Aceptamos Sura, Coomeva y consulta particular.', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
-  { title: 'Seguimiento Integral', description: 'Acompanamiento completo antes, durante y despues de tu tratamiento.', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
+  { title: 'Diagnóstico Preciso', description: 'Evaluaciones detalladas para encontrar la raíz del problema y tratarlo efectivamente.', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { title: 'Atención Rápida', description: 'Citas en menos de 48 horas. Tu salud no puede esperar.', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+  { title: 'Ubicación Estratégica', description: 'En el corazón del Oriente Antioqueño, fácil acceso desde cualquier municipio.', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
+  { title: 'Equipo Especializado', description: 'Profesionales con años de experiencia y formación continua.', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' },
+  { title: 'Múltiples Coberturas', description: 'Aceptamos Sura, Coomeva y consulta particular.', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
+  { title: 'Seguimiento Integral', description: 'Acompañamiento completo antes, durante y después de tu tratamiento.', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4' },
 ];
 
 const testimonials = [
-  { name: 'Maria Fernanda G.', text: 'Excelente atencion del Dr. Avila. Mi cirugia de cataratas fue un exito total. Ahora veo perfectamente sin necesidad de gafas.', rating: 5, specialty: 'Oftalmologia' },
-  { name: 'Carlos Alberto M.', text: 'La Dra. Carolina es muy profesional y amable. Me opero de rinoplastia y los resultados superaron mis expectativas.', rating: 5, specialty: 'Otorrinolaringologia' },
-  { name: 'Ana Lucia P.', text: 'Llevé a mi hijo por problemas de audición y el trato fue excelente. Diagnostico rapido y tratamiento efectivo.', rating: 5, specialty: 'Otorrinolaringologia' },
-  { name: 'Roberto Jose S.', text: 'Tenia miedo de operarme los ojos pero el equipo me dio total confianza. Procedimiento rapido y sin dolor.', rating: 5, specialty: 'Oftalmologia' },
+  { name: 'María Fernanda G.', text: 'Excelente atención del Dr. Ávila. Mi cirugía de cataratas fue un éxito total. Ahora veo perfectamente sin necesidad de gafas.', rating: 5, specialty: 'Oftalmología' },
+  { name: 'Carlos Alberto M.', text: 'La Dra. Carolina es muy profesional y amable. Me operó de rinoplastia y los resultados superaron mis expectativas.', rating: 5, specialty: 'Otorrinolaringología' },
+  { name: 'Ana Lucía P.', text: 'Llevé a mi hijo por problemas de audición y el trato fue excelente. Diagnóstico rápido y tratamiento efectivo.', rating: 5, specialty: 'Otorrinolaringología' },
+  { name: 'Roberto José S.', text: 'Tenía miedo de operarme los ojos pero el equipo me dio total confianza. Procedimiento rápido y sin dolor.', rating: 5, specialty: 'Oftalmología' },
 ];
 
 const process = [
-  { step: 1, title: 'Agenda tu cita', description: 'Llena el formulario o llamanos. Respondemos en menos de 24 horas.', icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' },
-  { step: 2, title: 'Consulta inicial', description: 'Evaluacion completa con tecnologia de punta para un diagnostico preciso.', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' },
+  { step: 1, title: 'Agenda tu cita', description: 'Llena el formulario o llámanos. Respondemos en menos de 24 horas.', icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' },
+  { step: 2, title: 'Consulta inicial', description: 'Evaluación completa con tecnología de punta para un diagnóstico preciso.', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2' },
   { step: 3, title: 'Plan de tratamiento', description: 'Te explicamos las opciones y creamos un plan personalizado para ti.', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
-  { step: 4, title: 'Recuperacion', description: 'Seguimiento continuo para garantizar los mejores resultados.', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
+  { step: 4, title: 'Recuperación', description: 'Seguimiento continuo para garantizar los mejores resultados.', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
 ];
 
 const faqs = [
-  { question: '¿Cuanto tiempo tarda en conseguir una cita?', answer: 'Normalmente podemos agendar tu cita en menos de 48 horas. Para urgencias, contamos con atencion prioritaria el mismo dia.' },
-  { question: '¿Aceptan seguros medicos?', answer: 'Si, trabajamos con Poliza Sura y Seguros Coomeva. Tambien ofrecemos consulta particular con facilidades de pago.' },
-  { question: '¿Las cirugias son ambulatorias?', answer: 'La mayoria de nuestros procedimientos son ambulatorios, lo que significa que puedes regresar a casa el mismo dia. Te daremos instrucciones detalladas de cuidado postoperatorio.' },
-  { question: '¿Atienden ninos?', answer: 'Si, tanto en oftalmologia como en otorrinolaringologia atendemos pacientes de todas las edades, incluyendo ninos.' },
-  { question: '¿Donde estan ubicados?', answer: 'Estamos ubicados en Rionegro, Antioquia, en el corazon del Oriente Antioqueno. Tenemos facil acceso desde todos los municipios cercanos.' },
+  { question: '¿Cuánto tiempo tarda en conseguir una cita?', answer: 'Normalmente podemos agendar tu cita en menos de 48 horas. Para urgencias, contamos con atención prioritaria el mismo día.' },
+  { question: '¿Aceptan seguros médicos?', answer: 'Sí, trabajamos con Póliza Sura y Seguros Coomeva. También ofrecemos consulta particular con facilidades de pago.' },
+  { question: '¿Las cirugías son ambulatorias?', answer: 'La mayoría de nuestros procedimientos son ambulatorios, lo que significa que puedes regresar a casa el mismo día. Te daremos instrucciones detalladas de cuidado postoperatorio.' },
+  { question: '¿Atienden niños?', answer: 'Sí, tanto en oftalmología como en otorrinolaringología atendemos pacientes de todas las edades, incluyendo niños.' },
+  { question: '¿Dónde están ubicados?', answer: 'Estamos ubicados en Rionegro, Antioquia, en el corazón del Oriente Antioqueño. Tenemos fácil acceso desde todos los municipios cercanos.' },
 ];
 ---
 
-<PageLayout title="Inicio" description="Centro Medico Especialistas del Oriente - Especialistas en oftalmologia y otorrinolaringologia en Rionegro, Antioquia">
+<PageLayout title="Inicio" description="Centro Médico Especialistas del Oriente - Especialistas en oftalmología y otorrinolaringología en Rionegro, Antioquia">
 
   <!-- Hero Slider with Appointment Form -->
   <HeroSlider />
@@ -52,15 +52,15 @@ const faqs = [
   <!-- Specialties Section -->
   <section class="grid grid-cols-1 md:grid-cols-2">
     <SpecialtyCard
-      title="Otorrinolaringologia"
-      description="Con nuestro servicio de otorrinolaringologia podras encontrar el abordaje de las patologias de oidos, nariz, garganta y laringe, intervenciones quirurgicas de funcionalidad, tratamientos cosmeticos y manejo de urgencias de la especialidad."
+      title="Otorrinolaringología"
+      description="Con nuestro servicio de otorrinolaringología podrás encontrar el abordaje de las patologías de oídos, nariz, garganta y laringe, intervenciones quirúrgicas de funcionalidad, tratamientos cosméticos y manejo de urgencias de la especialidad."
       icon="https://darkviolet-chough-405570.hostingersite.com/wp-content/uploads/2025/09/logoto.png"
       href="/otorrino"
       variant="pink"
     />
     <SpecialtyCard
-      title="Oftalmologia"
-      description="Con nuestro servicio de oftalmologia podras encontrar el abordaje de patologias oftalmologicas, procedimientos quirurgicos, atencion prioritaria y manejo de urgencias de la especialidad."
+      title="Oftalmología"
+      description="Con nuestro servicio de oftalmología podrás encontrar el abordaje de patologías oftalmológicas, procedimientos quirúrgicos, atención prioritaria y manejo de urgencias de la especialidad."
       icon="https://darkviolet-chough-405570.hostingersite.com/wp-content/uploads/2025/09/logoto2.png"
       href="/oftalmologia"
       variant="green"
@@ -115,13 +115,13 @@ const faqs = [
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
           </svg>
-          Por que elegirnos
+          Por qué elegirnos
         </span>
         <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
           Tu salud en las mejores manos
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Combinamos experiencia, tecnologia y atencion humana para brindarte el mejor cuidado.
+          Combinamos experiencia, tecnología y atención humana para brindarte el mejor cuidado.
         </p>
       </div>
 
@@ -158,7 +158,7 @@ const faqs = [
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
           </svg>
-          Equipo medico
+          Equipo médico
         </span>
         <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
           Nuestros especialistas
@@ -178,8 +178,8 @@ const faqs = [
           accentColor="pink"
         />
         <DoctorCard
-          name="Dr. Edgar Daniel Avila"
-          specialty="Oftalmologo"
+          name="Dr. Edgar Daniel Ávila"
+          specialty="Oftalmólogo"
           image="https://darkviolet-chough-405570.hostingersite.com/wp-content/uploads/2025/09/edgar.png"
           specialtyUrl="/oftalmologia"
           appointmentUrl="/contacto?especialidad=oftalmo"
@@ -258,10 +258,10 @@ const faqs = [
           Proceso simple
         </span>
         <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          ¿Como funciona?
+          ¿Cómo funciona?
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          En 4 sencillos pasos estaras en camino a mejorar tu salud.
+          En 4 sencillos pasos estarás en camino a mejorar tu salud.
         </p>
       </div>
 
@@ -305,17 +305,17 @@ const faqs = [
         Certificaciones profesionales
       </h2>
       <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-        Nuestros especialistas cuentan con avales oficiales que respaldan su formacion y experiencia.
+        Nuestros especialistas cuentan con avales oficiales que respaldan su formación y experiencia.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <CertificationCard
-          title="Otorrinolaringologia"
+          title="Otorrinolaringología"
           image="https://darkviolet-chough-405570.hostingersite.com/wp-content/uploads/2025/09/certificado-otorrino.png"
           iconColor="green"
         />
         <CertificationCard
-          title="Oftalmologia"
+          title="Oftalmología"
           image="https://darkviolet-chough-405570.hostingersite.com/wp-content/uploads/2025/09/certificado-oftalmo.png"
           iconColor="teal"
         />
@@ -340,7 +340,7 @@ const faqs = [
           ¿Tienes dudas?
         </h2>
         <p class="text-lg text-gray-600">
-          Aqui respondemos las preguntas mas comunes de nuestros pacientes.
+          Aquí respondemos las preguntas más comunes de nuestros pacientes.
         </p>
       </div>
 
@@ -384,11 +384,11 @@ const faqs = [
         </div>
 
         <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-          No esperes mas para<br/>cuidar tu salud
+          No esperes más para<br/>cuidar tu salud
         </h2>
 
         <p class="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-          Cada dia que pasa sin atencion puede complicar tu condicion. Nuestro equipo esta listo para ayudarte hoy.
+          Cada día que pasa sin atención puede complicar tu condición. Nuestro equipo está listo para ayudarte hoy.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -432,13 +432,13 @@ const faqs = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
-            Ubicacion
+            Ubicación
           </span>
           <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Visitanos en Rionegro
+            Visítanos en Rionegro
           </h2>
           <p class="text-lg text-gray-600 mb-8">
-            Estamos ubicados en el corazon del Oriente Antioqueno, con facil acceso desde todos los municipios cercanos.
+            Estamos ubicados en el corazón del Oriente Antioqueño, con fácil acceso desde todos los municipios cercanos.
           </p>
 
           <!-- Contact Cards -->
@@ -450,7 +450,7 @@ const faqs = [
                 </svg>
               </div>
               <div>
-                <p class="text-sm text-gray-500">Llamanos</p>
+                <p class="text-sm text-gray-500">Llámanos</p>
                 <p class="font-semibold text-gray-900">350 221 7249</p>
               </div>
             </a>
@@ -474,7 +474,7 @@ const faqs = [
                 </svg>
               </div>
               <div>
-                <p class="text-sm text-gray-500">Correo electronico</p>
+                <p class="text-sm text-gray-500">Correo electrónico</p>
                 <p class="font-semibold text-gray-900">citascmeo@gmail.com</p>
               </div>
             </a>
@@ -486,7 +486,7 @@ const faqs = [
           <div class="absolute -inset-4 bg-gradient-to-br from-brand-green-500/20 to-brand-blue-500/20 rounded-3xl blur-2xl"></div>
           <div class="relative rounded-3xl overflow-hidden shadow-soft-xl border border-gray-100">
             <iframe
-              title="Ubicacion CMEO Especialistas - City Medica"
+              title="Ubicación CMEO Especialistas - City Médica"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.9299507615087!2d-75.3787157!3d6.1401126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e469f1878ecc90d%3A0x771d3ead2fb33ed9!2sCity%20Medica!5e0!3m2!1ses!2spl!4v1750949778770!5m2!1ses!2spl"
               width="100%"
               height="400"
