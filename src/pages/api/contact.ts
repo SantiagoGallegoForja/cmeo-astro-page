@@ -36,8 +36,8 @@ const UTM_FIELD_IDS = {
   dclid: 'zkr9ysbxCNssVHQZkXah',
 } as const;
 
-// Custom Field key for Convenio
-const CONVENIO_FIELD_KEY = 'contact.convenio';
+// Custom Field ID for Convenio
+const CONVENIO_FIELD_ID = 'YwpfSc45qvZaCpyxEHfV';
 
 // Pipeline IDs by specialty
 const PIPELINES = {
@@ -80,7 +80,7 @@ export const POST: APIRoute = async ({ request }) => {
     const lastName = nameParts.slice(1).join(' ') || '';
 
     // Build custom fields array with UTM data and convenio
-    const customFields: Array<{ id?: string; key?: string; field_value?: string; value?: string }> = [];
+    const customFields: Array<{ id: string; value: string }> = [];
 
     if (data.utmParams) {
       const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fclid', 'dclid'] as const;
@@ -98,8 +98,8 @@ export const POST: APIRoute = async ({ request }) => {
     // Add convenio custom field
     if (data.convenio && data.convenio.trim()) {
       customFields.push({
-        key: CONVENIO_FIELD_KEY,
-        field_value: data.convenio.trim(),
+        id: CONVENIO_FIELD_ID,
+        value: data.convenio.trim(),
       });
     }
 
