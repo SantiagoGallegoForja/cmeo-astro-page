@@ -2,10 +2,13 @@
   "name": "cmeo-astro-page",
   "type": "module",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/fix-vercel-runtime.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

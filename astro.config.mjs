@@ -5,9 +5,7 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   integrations: [tailwind()],
   output: 'hybrid',
-  adapter: vercel({
-    runtime: 'nodejs20.x',
-  }),
+  adapter: vercel(),
   redirects: {
     '/formlario-contacto': '/contacto',
     '/formulario-contacto': '/contacto',
