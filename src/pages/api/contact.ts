@@ -51,6 +51,46 @@ const PIPELINES = {
   },
 } as const;
 
+// Google Sheets backup URL
+const GOOGLE_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbyO6PPusGAOkecc1O_3xOMMrqM7EXbC5EsK9WaUoPdfXRvniHDc1wSQwRHVzcHgx_lQwg/exec';
+
+// Function to send data to Google Sheets as backup
+async function sendToGoogleSheets(data: ContactPayload): Promise<void> {
+  try {
+    const sheetsPayload = {
+      nombre: data.name,
+      telefono: data.phone,
+      email: data.email || '',
+      especialidad: data.service || '',
+      convenio: data.convenio || '',
+      mensaje: data.message || '',
+      utm_source: data.utmParams?.utm_source || '',
+      utm_medium: data.utmParams?.utm_medium || '',
+      utm_campaign: data.utmParams?.utm_campaign || '',
+      utm_term: data.utmParams?.utm_term || '',
+      utm_content: data.utmParams?.utm_content || '',
+      gclid: data.utmParams?.gclid || '',
+      fclid: data.utmParams?.fclid || '',
+      dclid: data.utmParams?.dclid || '',
+    };
+
+    const response = await fetch(GOOGLE_SHEETS_WEBHOOK, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(sheetsPayload),
+    });
+
+    if (!response.ok) {
+      console.error('Google Sheets backup failed:', await response.text());
+    }
+  } catch (error) {
+    console.error('Google Sheets backup error:', error);
+    // Don't throw - this is just a backup
+  }
+}
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data: ContactPayload = await request.json();
@@ -62,6 +102,9 @@ export const POST: APIRoute = async ({ request }) => {
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
+
+    // Send to Google Sheets as backup (don't await - fire and forget)
+    sendToGoogleSheets(data).catch(err => console.error('Sheets backup failed:', err));
 
     const GHL_API_KEY = import.meta.env.GHL_API_KEY;
     const GHL_LOCATION_ID = import.meta.env.GHL_LOCATION_ID;
