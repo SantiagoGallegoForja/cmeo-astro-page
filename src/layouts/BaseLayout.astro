@@ -28,26 +28,39 @@ const { title, description = 'Centro Medico Especialistas del Oriente - Especial
     <slot />
 
     <!-- UTM Persistence Script -->
-    <script>
-      const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fclid', 'dclid'];
-      const STORAGE_KEY = 'cmeo_utm_params';
+    <script is:inline>
+      (function() {
+        const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fclid', 'dclid'];
+        const STORAGE_KEY = 'cmeo_utm_params';
 
-      function captureUtmParams() {
-        const params = new URLSearchParams(window.location.search);
-        const hasUtmInUrl = UTM_KEYS.some(key => params.has(key));
+        function captureUtmParams() {
+          const params = new URLSearchParams(window.location.search);
+          const hasUtmInUrl = UTM_KEYS.some(key => params.has(key));
 
-        if (hasUtmInUrl) {
-          const utmData = {};
-          UTM_KEYS.forEach(key => {
-            const value = params.get(key);
-            if (value) utmData[key] = value;
-          });
-          sessionStorage.setItem(STORAGE_KEY, JSON.stringify(utmData));
+          // Only save if URL has UTMs (don't overwrite existing data)
+          if (hasUtmInUrl) {
+            const utmData = {};
+            UTM_KEYS.forEach(key => {
+              const value = params.get(key);
+              if (value) utmData[key] = value;
+            });
+            sessionStorage.setItem(STORAGE_KEY, JSON.stringify(utmData));
+            console.log('UTMs saved:', utmData);
+          } else {
+            // Log existing UTMs from storage
+            const stored = sessionStorage.getItem(STORAGE_KEY);
+            if (stored) {
+              console.log('UTMs from storage:', JSON.parse(stored));
+            }
+          }
         }
-      }
 
-      captureUtmParams();
-      document.addEventListener('astro:page-load', captureUtmParams);
+        // Run immediately
+        captureUtmParams();
+
+        // Also run on Astro page transitions
+        document.addEventListener('astro:page-load', captureUtmParams);
+      })();
     </script>
   </body>
 </html>
