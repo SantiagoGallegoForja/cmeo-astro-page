@@ -26,5 +26,28 @@ const { title, description = 'Centro Medico Especialistas del Oriente - Especial
   </head>
   <body class="font-sans antialiased">
     <slot />
+
+    <!-- UTM Persistence Script -->
+    <script>
+      const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fclid', 'dclid'];
+      const STORAGE_KEY = 'cmeo_utm_params';
+
+      function captureUtmParams() {
+        const params = new URLSearchParams(window.location.search);
+        const hasUtmInUrl = UTM_KEYS.some(key => params.has(key));
+
+        if (hasUtmInUrl) {
+          const utmData = {};
+          UTM_KEYS.forEach(key => {
+            const value = params.get(key);
+            if (value) utmData[key] = value;
+          });
+          sessionStorage.setItem(STORAGE_KEY, JSON.stringify(utmData));
+        }
+      }
+
+      captureUtmParams();
+      document.addEventListener('astro:page-load', captureUtmParams);
+    </script>
   </body>
 </html>

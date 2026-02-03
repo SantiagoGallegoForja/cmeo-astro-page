@@ -290,8 +290,28 @@
       updateConvenioOptions(target.value);
     });
 
-    // Helper function to get UTM params from URL
+    // Helper function to get UTM params from sessionStorage or URL
     const getUtmParams = () => {
+      const STORAGE_KEY = 'cmeo_utm_params';
+      const stored = sessionStorage.getItem(STORAGE_KEY);
+
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored);
+          return {
+            utm_source: parsed.utm_source || '',
+            utm_medium: parsed.utm_medium || '',
+            utm_campaign: parsed.utm_campaign || '',
+            utm_term: parsed.utm_term || '',
+            utm_content: parsed.utm_content || '',
+            gclid: parsed.gclid || '',
+            fclid: parsed.fclid || '',
+            dclid: parsed.dclid || '',
+          };
+        } catch {}
+      }
+
+      // Fallback to URL params
       const params = new URLSearchParams(window.location.search);
       return {
         utm_source: params.get('utm_source') || '',
