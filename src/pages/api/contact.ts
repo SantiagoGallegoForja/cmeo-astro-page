@@ -106,8 +106,10 @@ export const POST: APIRoute = async ({ request }) => {
     // Send to Google Sheets as backup (don't await - fire and forget)
     sendToGoogleSheets(data).catch(err => console.error('Sheets backup failed:', err));
 
-    const GHL_API_KEY = import.meta.env.GHL_API_KEY || process.env.GHL_API_KEY;
-    const GHL_LOCATION_ID = import.meta.env.GHL_LOCATION_ID || process.env.GHL_LOCATION_ID;
+    // Use process.env directly — import.meta.env gets replaced at build time by Vite
+    // and Vercel's .env file is not available during build
+    const GHL_API_KEY = process.env.GHL_API_KEY;
+    const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;
 
     if (!GHL_API_KEY || !GHL_LOCATION_ID) {
       console.error('GHL credentials not configured');
